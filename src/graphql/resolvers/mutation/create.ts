@@ -1,4 +1,7 @@
-import UserModel from "@/graphql/models/user";
+import UserModel from "@/graphql/models/userModel";
+import connectToDB from "@/utils/connectDB";
+
+connectToDB()
 
 export const createUser = async (_: any, { fields }: any) => {
   const { username, email, password } = fields;

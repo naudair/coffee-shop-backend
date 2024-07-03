@@ -1,5 +1,4 @@
-import { Catgeory } from "./category";
 import { mergeTypeDefs } from "@graphql-tools/merge";
+import { User } from "./user";
 
-export const typeDefs = mergeTypeDefs([Catgeory]);
-
+export const typeDefs = mergeTypeDefs([User]);
