@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-const connectToMongodb = async () => {
+const connectToDB = async () => {
   try {
     const mongoUri =
-      "mongodb+srv://anudari:anudari0112@cluster0.hk79mx6.mongodb.net/todo-list";
+      "mongodb+srv://anudari:anudari0112@cluster0.hk79mx6.mongodb.net/coffee-shop";
     await mongoose.connect(mongoUri);
     console.log("Connected to Database");
   } catch (err) {
     console.log(err);
   }
 };
-export default connectToMongodb;
+export default connectToDB;
