@@ -13,27 +13,9 @@ export const User = gql`
     password: String
   }
   type Query {
-    getUser: [User!]
+    getUsers: [User!]
   }
   type Mutation {
-    createUser(input: UserInput): User
+    createUser(fields: UserInput): User
   }
 `;
-
-// import gql from "graphql-tag";
-
-// export const Catgeory = gql`
-//   type Catgeory {
-//     _id: ID!
-//    name: String;
-//   }
-//   input CatgeoryInput {
-//     name: String;
-//   }
-//   type Query {
-//     getCategory: [Catgeory]
-//   }
-//   type Mutation {
-//     createCategory(field: CatgeoryInput): Catgeory
-//   }
-// `;

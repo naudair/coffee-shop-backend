@@ -1,6 +1,6 @@
 import UserModel from "../../models/userModel";
 
-export const getUser = async () => {
+export const getUsers = async () => {
   try {
     const user = await UserModel.find({});
     console.log(user);
