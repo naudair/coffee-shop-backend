@@ -1,4 +1,3 @@
-import ProductModel from "@/graphql/models/productModel";
 import UserModel from "@/graphql/models/userModel";
 
 export const createUser = async (_: any, { fields }: any) => {
@@ -13,20 +12,15 @@ export const createUser = async (_: any, { fields }: any) => {
   }
 };
 
-export const createProduct = async (_: any, { fields }: any) => {
-  const { name, price, imgUrl, description, category } = fields;
+export const loginUser = async (_: any, { fields }: any) => {
+  const { email } = fields;
   console.log(fields);
   try {
-    const product = await ProductModel.create({
-      name,
-      price,
-      imgUrl,
-      description,
-      category,
-    });
-    console.log("Successfully CREATED product!");
-    return product;
+    const data = await UserModel.findOne({email});
+    console.log("User Login!");
+    return data;
   } catch (error) {
     console.log(error);
   }
 };
+
