@@ -1,22 +1,35 @@
 import gql from "graphql-tag";
 
-export const User = gql`
-  type User {
+export const Product = gql`
+  type Product {
     _id: ID!
+    imgUrl: String
     name: String
-    price: String
-    password: String
+    price: Price
+    description: String
+    category: String
   }
-  input UserInput {
+  type Price {
+    small: Float
+    medium: Float
+    large: Float
+  }
+  input ProductInput {
+    imgUrl: String
     name: String
-    email: String
-    password: String
+    price: PriceInput
+    description: String
+    category: String
+  }
+  input PriceInput {
+    small: Float
+    medium: Float
+    large: Float
   }
   type Query {
-    getUsers: [User!]
+    getProducts: [Product!]
   }
   type Mutation {
-    createUser(fields: UserInput): User
-    loginUser(fields: UserLoginInput): User
+    createProduct(fields: ProductInput): Product
   }
 `;

@@ -16,7 +16,14 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  createProduct?: Maybe<Product>;
   createUser?: Maybe<User>;
+  loginUser?: Maybe<User>;
+};
+
+
+export type MutationCreateProductArgs = {
+  fields?: InputMaybe<ProductInput>;
 };
 
 
@@ -24,8 +31,45 @@ export type MutationCreateUserArgs = {
   fields?: InputMaybe<UserInput>;
 };
 
+
+export type MutationLoginUserArgs = {
+  fields?: InputMaybe<UserLoginInput>;
+};
+
+export type Price = {
+  __typename?: 'Price';
+  large?: Maybe<Scalars['Float']['output']>;
+  medium?: Maybe<Scalars['Float']['output']>;
+  small?: Maybe<Scalars['Float']['output']>;
+};
+
+export type PriceInput = {
+  large?: InputMaybe<Scalars['Float']['input']>;
+  medium?: InputMaybe<Scalars['Float']['input']>;
+  small?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type Product = {
+  __typename?: 'Product';
+  _id: Scalars['ID']['output'];
+  category?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  imgUrl?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Price>;
+};
+
+export type ProductInput = {
+  category?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  imgUrl?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  price?: InputMaybe<PriceInput>;
+};
+
 export type Query = {
   __typename?: 'Query';
+  getProducts?: Maybe<Array<Product>>;
   getUsers?: Maybe<Array<User>>;
 };
 
@@ -41,6 +85,11 @@ export type UserInput = {
   email?: InputMaybe<Scalars['String']['input']>;
   password?: InputMaybe<Scalars['String']['input']>;
   userName?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type UserLoginInput = {
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
 };
 
 
