@@ -11,10 +11,6 @@ const productSchema = new mongoose.Schema({
   },
   description: String,
   category: String, // category id
-  // size: {
-  //   type: String,
-  //   enum: ["small", "medium", "large"],
-  // },
 });
 const ProductModel =
   mongoose.models.product || mongoose.model("product", productSchema);

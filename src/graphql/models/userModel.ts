@@ -5,15 +5,15 @@ const userSchema = new mongoose.Schema({
   userName: String,
   email: String,
   password: String,
-  // avatar: String,
-  // address: String,
-  // cardInfo: {
-  //   name: String,
-  //   number: String,
-  //   expirationDate: String,
-  //   cvv: String,
-  // },
-  // favorites: String[], // product id
+  avatar: String,
+  address: String,
+  cardInfo: {
+    name: String,
+    number: String,
+    expirationDate: String,
+    cvv: String,
+  },
+  favorites: [String], // product id
 });
 const UserModel = mongoose.models.user || mongoose.model("user", userSchema);
 

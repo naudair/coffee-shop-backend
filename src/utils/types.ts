@@ -33,14 +33,14 @@
 // };
 
 // export type Order = {
-//     id: string;
-//     products: {
-//         productId: string; // product id
-//         size: "small" | "medium" | "large";
-//         quantity: number;
-//         milkAmount: number; // 1-10
+//   id: string;
+//   products: {
+//     productId: string; // product id
+//     size: "small" | "medium" | "large";
+//     quantity: number;
+//     milkAmount: number; // 1-10
 //   }[];
-//   user: string;
+//   user: string; // user id
 //   date: Date;
 //   status: "placed" | "in progress" | "on the way" | "delivered";
 //   promoCode: string | null;
