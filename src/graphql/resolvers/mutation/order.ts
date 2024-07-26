@@ -1,6 +1,8 @@
 import OrderModel from "@/graphql/models/orderModel";
+import { connectToDB } from "@/utils/connectDB";
 
 export const createOrder = async (_: any, { fields }: any) => {
+  await connectToDB();
   const {
     products,
     user,

@@ -2,8 +2,10 @@ import ProductModel from "@/graphql/models/productModel";
 import UserModel from "../../models/userModel";
 import OrderModel from "@/graphql/models/orderModel";
 import CategoryModel from "@/graphql/models/categoryModel";
+import { connectToDB } from "@/utils/connectDB";
 
 export const getUsers = async () => {
+  await connectToDB();
   try {
     const user = await UserModel.find({});
     console.log(user);
@@ -14,6 +16,7 @@ export const getUsers = async () => {
 };
 
 export const getProducts = async () => {
+  await connectToDB();
   try {
     const product = await ProductModel.find({});
     console.log(product);
@@ -24,6 +27,7 @@ export const getProducts = async () => {
 };
 
 export const getOrders = async () => {
+  await connectToDB();
   try {
     const order = await OrderModel.find({});
     console.log(order);
@@ -34,6 +38,7 @@ export const getOrders = async () => {
 };
 
 export const getCategories = async () => {
+  await connectToDB();
   try {
     const category = await CategoryModel.find({});
     console.log(category);
